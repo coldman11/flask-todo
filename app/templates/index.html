@@ -1,11 +1,18 @@
 {% extends "bootstrap/base.html" %}
 
 {% block content %}
+
 <link rel="stylesheet" href="static/css/style.css">
+
 <div class="container">
     <div>
         {% for todo in todos %}
-            {{ todo }}
+            <div class="panel panel-primary">
+                <div class="panel-heading">Todo</div>
+                <div class="panel-body">
+                    <p>{{ todo['text'] }}</p>
+                </div>
+            </div>
         {% endfor %}
     </div>
 </div>
