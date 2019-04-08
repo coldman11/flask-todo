@@ -1,5 +1,12 @@
 {% extends "bootstrap/base.html" %}
 
 {% block content %}
-    <h1>todo</h1>
+<link rel="stylesheet" href="static/css/style.css">
+<div class="container">
+    <div>
+        {% for todo in todos %}
+            {{ todo }}
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
