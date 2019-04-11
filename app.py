@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 Bootstrap(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'todos.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///C:/repos/g3/flask-todo/todo.db'
 
 db = SQLAlchemy(app)
 
