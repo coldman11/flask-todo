@@ -2,3 +2,4 @@ Flask
 Flask-WTF
 WTForms
 flask-bootstrap==3.3.7.1
+flask-sqlalchemy
