@@ -20,14 +20,15 @@ todo-flask
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">Flask todo</a>
             </div>
-            <form class="navbar-form navbar-left">
+            <form class="navbar-form navbar-left" action="/add" method="POST">
                 <div class="form-group">
-                  <input type="text" class="form-control" placeholder="task">
+                  <input type="text" class="form-control" placeholder="task" name="todoitem">
                 </div>
-                <button type="submit" class="btn btn-default">Add task</button>
+                <input type="submit" class="btn btn-default">
             </form>
         </div>
     </nav>
+
     <ul class="list-group">
     {% for todo in todos %}
         <li class="list-group-item">
