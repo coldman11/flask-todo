@@ -24,7 +24,7 @@ todo-flask
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="task" name="todoitem">
                 </div>
-                <input type="submit" class="btn btn-default">
+                <input type="submit" class="btn btn-default" value="Add task">
             </form>
         </div>
     </nav>
@@ -34,22 +34,26 @@ todo-flask
             <li class="list-group-item">
                 <div class="row">
                     <div class="col-md-10">
-                        <h4>{{ todo['text'] }}</h4>
-                        <h4>{{ todo['complete'] }}</h4>
+
+                        {% if todo.complete == True %}
+                        <del>{{ todo['text'] }}</del>
+                        {% else %}
+                        <span>{{ todo['text'] }}</span>
+                        {% endif %}
                     </div>
-                    <div class="col-md-2">
-                        <div class="btn-group" role="group" aria-label="...">
-                            <form action="/update/{{ todo['id'] }}" method="POST">
-                                <button type="submit" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                </button>
-                            </form>
-                            <form action="/remove/{{ todo['id'] }}" method="POST">
-                                <button type="submit" class="btn btn-default">
-                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                </button>
-                            </form>
-                        </div>
+                    <div class="col-md-1">
+                        <form action="/update/{{ todo['id'] }}" method="POST">
+                            <button type="submit" class="btn btn-default">
+                                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-mid-1">
+                        <form action="/remove/{{ todo['id'] }}" method="POST">
+                            <button type="submit" class="btn btn-default">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                        </form>
                     </div>
 
                 </div>
