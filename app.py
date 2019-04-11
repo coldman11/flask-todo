@@ -40,5 +40,11 @@ def remove(id):
     db.session.commit()
     return redirect(url_for('index'))
 
+@app.route('/removeall', methods=['POST'])
+def removeall():
+    Todo.query.delete()
+    db.session.commit()
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)
